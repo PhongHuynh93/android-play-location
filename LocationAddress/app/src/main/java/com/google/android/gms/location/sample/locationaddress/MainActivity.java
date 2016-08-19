@@ -224,7 +224,7 @@ public class MainActivity extends ActionBarActivity implements
         // Create an intent for passing to the intent service responsible for fetching the address.
         Intent intent = new Intent(this, FetchAddressIntentService.class);
 
-        // Pass the result receiver as an extra to the service.
+        // todo 0 - Pass the result receiver as an extra to the service.
         intent.putExtra(Constants.RECEIVER, mResultReceiver);
 
         // Pass the location data as an extra to the service.
@@ -233,6 +233,7 @@ public class MainActivity extends ActionBarActivity implements
         // Start the service. If the service isn't already running, it is instantiated and started
         // (creating a process for it if needed); if it is running then it remains running. The
         // service kills itself automatically once all intents are processed.
+        // TODO: 8/19/16 0a - start service
         startService(intent);
     }
 
@@ -298,7 +299,7 @@ public class MainActivity extends ActionBarActivity implements
         }
 
         /**
-         *  Receives data sent from FetchAddressIntentService and updates the UI in MainActivity.
+         *  todo 5, Receives data sent from FetchAddressIntentService and updates the UI in MainActivity.
          */
         @Override
         protected void onReceiveResult(int resultCode, Bundle resultData) {

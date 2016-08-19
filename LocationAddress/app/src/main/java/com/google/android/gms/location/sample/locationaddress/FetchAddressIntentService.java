@@ -20,6 +20,7 @@ import java.util.Locale;
  * location through an intent. Tries to fetch the address for the location using a Geocoder, and
  * sends the result to the ResultReceiver.
  */
+// TODO: 8/19/16 1 - add  IntentService because this work can take a long time to reverse location to address
 public class FetchAddressIntentService extends IntentService {
     private static final String TAG = "FetchAddressIS";
 
@@ -29,7 +30,7 @@ public class FetchAddressIntentService extends IntentService {
     protected ResultReceiver mReceiver;
 
     /**
-     * This constructor is required, and calls the super IntentService(String)
+     * todo 2 - This constructor is required, and calls the super IntentService(String)
      * constructor with the name for a worker thread.
      */
     public FetchAddressIntentService() {
@@ -38,6 +39,7 @@ public class FetchAddressIntentService extends IntentService {
     }
 
     /**
+     * // TODO: 8/19/16 3 implement onHandleIntent() and get the data from intent
      * Tries to get the location address using a Geocoder. If successful, sends an address to a
      * result receiver. If unsuccessful, sends an error message instead.
      * Note: We define a {@link android.os.ResultReceiver} in * MainActivity to process content
@@ -136,7 +138,7 @@ public class FetchAddressIntentService extends IntentService {
     }
 
     /**
-     * Sends a resultCode and message to the receiver.
+     * todo 4- Sends a resultCode and message to the receiver.
      */
     private void deliverResultToReceiver(int resultCode, String message) {
         Bundle bundle = new Bundle();
